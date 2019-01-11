@@ -5,7 +5,7 @@ import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
 	{ path: '', component: ContentLayoutComponent, children: [
-		{ path: 'home', component: HomeComponent}
+		{ path: '', component: HomeComponent}
 	]},
 ];
 
