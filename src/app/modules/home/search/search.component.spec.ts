@@ -1,5 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialModule } from '../../../shared/material.module';
+
 import { SearchComponent } from './search.component';
 
 describe('SearchComponent', () => {
@@ -8,7 +13,8 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
+      declarations: [ SearchComponent ],
+      imports: [ FormsModule, MaterialModule, BrowserAnimationsModule ]
     })
     .compileComponents();
   }));

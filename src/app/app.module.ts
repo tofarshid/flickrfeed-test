@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // add
+
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
-
 
 import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -29,8 +31,10 @@ import { SearchComponent } from './modules/home/search/search.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule
 
     // ,RouterModule
   ],

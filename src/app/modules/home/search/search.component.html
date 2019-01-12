@@ -1,9 +1,26 @@
-<p>
-  search works!
-</p>
-<button 
-	type="button" 
-	mat-raised-button 
-	color="primary"
-	ngModule>Submit
-</button>
+<form
+	#searchform="ngForm"
+	fxLayout="row"
+	fxLayoutGap="5px"
+	class="container-fluid"
+	ngClass.gt-sm="search-padding"
+	(ngSubmit)="onSubmit(searchform)">
+	<div fxFlex="70">
+		<input
+			class="input-text full-width full-height"
+			type="text"
+			name="search"
+			placeholder="please enter text here"
+			name="searchtext">
+	</div>
+	<div fxFlex="30">
+		<button
+			class="input-btn full-width"
+			type="submit"
+			mat-raised-button
+			color="primary"
+			ngModule>
+			Submit
+		</button>
+	</div>
+</form>
