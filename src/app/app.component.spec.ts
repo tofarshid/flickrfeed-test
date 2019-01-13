@@ -70,8 +70,6 @@ describe('AppComponent', () => {
       it('has fontawesmen installed', () => {
         expect('#i').toBeTruthy();
       });
-
-
   });
 
 

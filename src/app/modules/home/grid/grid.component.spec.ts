@@ -35,9 +35,19 @@ describe('GridComponent', () => {
     fixture = TestBed.createComponent(GridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    // console.log(component.imageData$);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('', () =>{
+     beforeEach(async(() => {
+
+     }));
+     it('should load data', () => {
+
+     });
+  })
 });

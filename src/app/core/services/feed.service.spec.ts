@@ -33,10 +33,11 @@ describe('FeedService', () => {
   describe('', () => {
 
   	beforeEach(async( () => { 
-  		const dummyImages = [{ id: 0, title: 'title', farm: 0, server: 0,secret: ''}];
+  		let dummyImages = [{ id: 0, title: 'title', farm: 0, server: 0,secret: ''}];
     }));
 
   	it('getHttpData must return an Observable<Images[]>', () => {
+      
   		service.getHttpData('').subscribe(images => {
   			expect(images).toEqual(this.dummyImages);
   		});
