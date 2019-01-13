@@ -21,7 +21,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent, SearchComponent, GridComponent ],
       imports: [ FormsModule, MaterialModule, BrowserAnimationsModule, HttpClientTestingModule ],
-      providers: [ FeedService ]
+      providers: [  FeedService ]
     })
     .compileComponents();
   }));

@@ -31,6 +31,25 @@ describe('SearchComponent', () => {
   });
 
   it('should create', () => {
+    console.log(component);
     expect(component).toBeTruthy();
   });
+
+  describe('', () => {
+    beforeEach( () => {
+
+    });
+
+    it('has FeedService injected in constructor', () => {
+       expect(component['feedService']).not.toBe(null);
+    });
+
+    it('should search for images `isentia`', () => {
+       expect(component.searchtext).toEqual('isentia'); 
+    });
+
+
+  });
+
+
 });

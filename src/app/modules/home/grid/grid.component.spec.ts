@@ -46,8 +46,28 @@ describe('GridComponent', () => {
      beforeEach(async(() => {
 
      }));
-     it('should load data', () => {
 
+     it('has FeedService injected in constructor', () => {
+        expect(component['feedService']).not.toBe(null);
      });
+
+     it('has grid cols and gutter size initialised', () => {
+        expect(component['grid'].cols).not.toBe(null);
+        expect(component['grid'].gutterSize).not.toBe(null);
+     });
+
+     it('had image data in Observable to populate on component init', () => {
+       component.imageData$.subscribe(
+         images => {
+           expect(images.length).toBeGreaterThan(0);
+         }
+       );
+     });
+
+     it('has MediaObserver with a returned Observable<>', () => {
+       component['mediaObserver'].media$.subscribe( data => {
+         expect(data).not.toBe(null);
+       });
+     })
   })
 });

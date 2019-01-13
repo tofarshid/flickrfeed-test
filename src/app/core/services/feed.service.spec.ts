@@ -3,15 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { FeedService } from './feed.service';
-
+import { Images } from '../models/image';
 describe('FeedService', () => {
   
   let injector: TestBed;
   let service: FeedService;
   let httpMock: HttpTestingController;
-  let spy: any;
-
-
 
   beforeEach(() => {
 
@@ -23,7 +20,13 @@ describe('FeedService', () => {
   	injector = getTestBed();
   	service = injector.get(FeedService);
   	httpMock = injector.get(HttpTestingController);
+
   });
+
+  // let dummyImages: Images[] = [
+  //   Object({ id: '45196013881', owner: '167001463@N02', secret: '388e0cf75f', 
+  //   server: '1960', farm: 2, 
+  //   title: 'Duncan Calder KPMG, from Ken Court to Li Ping, Oakajee'})];
 
   it('should be created', () => {
     const service: FeedService = TestBed.get(FeedService);
@@ -32,21 +35,22 @@ describe('FeedService', () => {
 
   describe('', () => {
 
-  	beforeEach(async( () => { 
-  		let dummyImages = [{ id: 0, title: 'title', farm: 0, server: 0,secret: ''}];
-    }));
-
-  	it('getHttpData must return an Observable<Images[]>', () => {
-      
+  	it('getHttpData must return an Observable<>', () => {
   		service.getHttpData('').subscribe(images => {
-  			expect(images).toEqual(this.dummyImages);
+  			expect(images).not.toBe(null);
   		});
   	});
-  	it('getImagesObservable must return an Observable<Images[]>', () => {
+
+  	it('getImagesObservable must return an Observable<>', () => {
   		service.getImagesObservable().subscribe(images => {
-  			expect(images).toEqual(this.dummyImages);
+  			expect(images).not.toBe(null);
   		});
+
+
+      service['imageData'].subscribe(x => {
+        console.log(x);
+      });
+
   	});
   });
-
 });
