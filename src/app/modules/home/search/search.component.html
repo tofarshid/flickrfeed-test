@@ -9,9 +9,9 @@
 		<input
 			class="input-text full-width full-height"
 			type="text"
-			name="search"
 			placeholder="please enter text here"
-			name="searchtext">
+			name="searchtext"
+			[(ngModel)]="searchtext">
 	</div>
 	<div fxFlex="30">
 		<button
@@ -20,7 +20,7 @@
 			mat-raised-button
 			color="primary"
 			ngModule>
-			Submit
+			search
 		</button>
 	</div>
 </form>

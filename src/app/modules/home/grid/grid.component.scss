@@ -1,5 +1,4 @@
 .container-fluid {
-	height: 100vh;
 	padding: 0;
 }
 
@@ -7,14 +6,22 @@
 	border: 1px solid #e1e1e1;
 }
 
+.mat-grid-tile:hover {
+	border: 1px solid #222;
+}
 
 .image-title {
 	font-size: 14px;
 	position: absolute;
 	bottom: 0;
+	left: 0;
 	background: #222;
 	width: 100%;
 	opacity: .7;
 	color: #fff;
 	padding: 5px;
+}
+
+.image-width{
+	width: 100%;
 }

@@ -1,15 +1,11 @@
 <div class="container-fluid">
-
+	<div *ngIf="(imageData$ | async)?.length==0">No records found.</div>
 	<mat-grid-list #grid rowHeight="2:1">
-	  <mat-grid-tile>
+	  <mat-grid-tile *ngFor="let image of imageData$ | async">
 		<div>
-			<img class="full-width" src="https://i.ytimg.com/vi/TrLN2YId-5M/maxresdefault.jpg" alt="Photo of a Shiba Inu">
-			<div class="image-title">Title</div>
+			<img class="image-width" src="https://farm{{image.farm}}.staticflickr.com/{{image.server}}/{{image.id}}_{{image.secret}}_c.jpg">
+			<div class="image-title">{{ (image.title | slice:1:30) }}<span *ngIf="image.title.length > 30">...</span></div>
 		</div>
 	  </mat-grid-tile>
-
-	  <mat-grid-tile>2</mat-grid-tile>
-	  <mat-grid-tile>3</mat-grid-tile>
-	  <mat-grid-tile>4</mat-grid-tile>
 	</mat-grid-list>
 </div>

@@ -7,6 +7,10 @@ import { MaterialModule } from '../../../shared/material.module';
 
 import { SearchComponent } from './search.component';
 
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+
+import { FeedService } from '../../../core/services/feed.service';
+
 describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
@@ -14,7 +18,8 @@ describe('SearchComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SearchComponent ],
-      imports: [ FormsModule, MaterialModule, BrowserAnimationsModule ]
+      imports: [ FormsModule, MaterialModule, BrowserAnimationsModule, HttpClientTestingModule ],
+      providers: [ FeedService ]
     })
     .compileComponents();
   }));

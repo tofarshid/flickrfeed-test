@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm }   from '@angular/forms';
+
+import { FeedService } from '../../../core/services/feed.service';
+import { Images } from '../../../core/models/image';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent{
 
-  constructor() { }
+  searchtext: string = "isentia";
 
-  ngOnInit() {
-  }
+  constructor(private feedService: FeedService) { }
 
   onSubmit(form: NgForm) {
-  	console.log(form);
+  	this.feedService.getHttpData(form.form.value.searchtext).subscribe(
+  		images => { this.feedService.setImagesObservable(images); }
+  	);
   }
 }
