@@ -17,7 +17,7 @@ export class SearchComponent{
 
   onSubmit(form: NgForm) {
 
-    // fetch data when button clicked
+    // fetch data on button clicked
   	this.feedService.getHttpData(form.form.value.searchtext).subscribe(
   		images => { this.feedService.setImagesObservable(images); }
   	);

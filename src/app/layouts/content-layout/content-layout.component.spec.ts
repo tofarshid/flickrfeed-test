@@ -9,9 +9,6 @@ describe('ContentLayoutComponent', () => {
   let component: ContentLayoutComponent;
   let fixture: ComponentFixture<ContentLayoutComponent>;
 
-  // let headerComponent: HeaderComponent;
-  // let headerComponentFixture: ComponentFixture<HeaderComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
@@ -30,10 +27,6 @@ describe('ContentLayoutComponent', () => {
     fixture = TestBed.createComponent(ContentLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
-    // headerComponentFixture = TestBed.createComponent(HeaderComponent);
-    // headerComponent = headerComponentFixture.componentInstance;
-    // fixture.detectChanges();
   });
 
   it('should create', () => {
