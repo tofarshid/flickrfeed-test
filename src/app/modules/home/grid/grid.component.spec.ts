@@ -35,7 +35,6 @@ describe('GridComponent', () => {
     fixture = TestBed.createComponent(GridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    // console.log(component.imageData$);
   });
 
   it('should create', () => {

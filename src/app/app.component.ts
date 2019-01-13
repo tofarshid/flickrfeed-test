@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   	// app init
   	this.feedService.getHttpData('').subscribe(
-  		images => { this.feedService.setImagesObservable(images); console.log(images); }
+  		images => { this.feedService.setImagesObservable(images); }
   	);
   }
 }
