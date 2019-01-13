@@ -4,6 +4,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { FeedService } from './feed.service';
 import { Images } from '../models/image';
+
 describe('FeedService', () => {
   
   let injector: TestBed;
@@ -23,32 +24,30 @@ describe('FeedService', () => {
 
   });
 
-  // let dummyImages: Images[] = [
-  //   Object({ id: '45196013881', owner: '167001463@N02', secret: '388e0cf75f', 
-  //   server: '1960', farm: 2, 
-  //   title: 'Duncan Calder KPMG, from Ken Court to Li Ping, Oakajee'})];
-
-  it('should be created', () => {
+  it('should create', () => {
     const service: FeedService = TestBed.get(FeedService);
     expect(service).toBeTruthy();
   });
 
   describe('', () => {
 
-  	it('getHttpData must return an Observable<>', () => {
+  	it('getHttpData must return an Observable<Images[]>', () => {
   		service.getHttpData('').subscribe(images => {
-  			expect(images).not.toBe(null);
+        expect(images[0].id).toBeTruthy();
+        expect(images[0].title).toBeTruthy();
+        expect(images[0].farm).toBeTruthy();
+        expect(images[0].server).toBeTruthy();
+        expect(images[0].secret).toBeTruthy();
   		});
   	});
 
-  	it('getImagesObservable must return an Observable<>', () => {
+  	it('getImagesObservable must return an Observable<Images[]>', () => {
   		service.getImagesObservable().subscribe(images => {
-  			expect(images).not.toBe(null);
-  		});
-
-
-      service['imageData'].subscribe(x => {
-        console.log(x);
+  			expect(images[0].id).toBeTruthy();
+        expect(images[0].title).toBeTruthy();
+        expect(images[0].farm).toBeTruthy();
+        expect(images[0].server).toBeTruthy();
+        expect(images[0].secret).toBeTruthy();
       });
 
   	});

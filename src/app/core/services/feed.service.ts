@@ -16,7 +16,10 @@ export class FeedService {
 
   constructor( private httpClient: HttpClient) { }
 
-  // getter setter
+  // getter, setter function. 
+  // Every time getHttpData runs it saves the data in a Subject. 
+  // This is convenient for sharing data in between components
+  // and to get latest response from Flickr API
 
   getImagesObservable(): Observable<Images[]> {
     return this.imageData.asObservable();
@@ -26,7 +29,7 @@ export class FeedService {
     this.imageData.next(images);
   }
 
-  // getHttpData (main)
+  // This is only function used to fetch data using Http call
 
   getHttpData(searchText: string): Observable<any>{
 
@@ -34,8 +37,8 @@ export class FeedService {
     const url: string = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c0125f0d5b26b3cadaa23035114f7264&text=soccer&format=json&nojsoncallback=1&text=' + searchText;
     const http$ = createHttpObservable(url);
 
-    return http$.pipe(
-      map(res => Object.values(res))
+    return http$.pipe( 
+      map(res => { return res['photos'].photo})
     );
   }
 

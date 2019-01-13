@@ -26,7 +26,7 @@ export class GridComponent implements AfterContentInit {
   constructor(private mediaObserver: MediaObserver, private feedService: FeedService ) {
 
     // get last feed data from 'Subject' and populate
-    this.imageData$ = this.feedService.getImagesObservable().pipe(map(data => data['0'].photo));
+    this.imageData$ = this.feedService.getImagesObservable().pipe(map(data => data));
   }
 
   ngAfterContentInit() {

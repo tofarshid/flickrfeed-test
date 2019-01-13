@@ -31,7 +31,6 @@ describe('SearchComponent', () => {
   });
 
   it('should create', () => {
-    console.log(component);
     expect(component).toBeTruthy();
   });
 
