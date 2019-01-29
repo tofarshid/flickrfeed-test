@@ -7,7 +7,7 @@ import { FeedService } from './core/services/feed.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'isentia-test';
+  title = 'flickr-test';
 
   constructor(private feedService: FeedService) {}
 

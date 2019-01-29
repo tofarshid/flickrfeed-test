@@ -11,7 +11,7 @@ import { Images } from '../../../core/models/image';
 })
 export class SearchComponent{
 
-  searchtext: string = "isentia";
+  searchtext: string = "flickr";
 
   constructor(private feedService: FeedService) { }
 

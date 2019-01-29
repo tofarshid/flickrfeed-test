@@ -43,8 +43,8 @@ describe('SearchComponent', () => {
        expect(component['feedService']).not.toBe(null);
     });
 
-    it('should search for images `isentia`', () => {
-       expect(component.searchtext).toEqual('isentia'); 
+    it('should search for images `flickr`', () => {
+       expect(component.searchtext).toEqual('flickr'); 
     });
 
 
